@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
+    [SerializeField] GameObject cannonPrefab;
     [SerializeField] bool isPlacable;
 
     void OnMouseDown()
     {
         if (isPlacable)
         {
-            Debug.Log(transform.name);
+            Instantiate(cannonPrefab, transform.position, Quaternion.identity);
+            isPlacable = false;
         }
     }
     
