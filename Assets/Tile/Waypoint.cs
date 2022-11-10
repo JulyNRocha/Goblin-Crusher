@@ -12,7 +12,7 @@ public class Waypoint : MonoBehaviour
         if (isPlacable)
         {
             Instantiate(cannonPrefab, transform.position, Quaternion.identity);
-            Debug.Log(transform.name);
+            isPlacable = false;
         }
     }
     
