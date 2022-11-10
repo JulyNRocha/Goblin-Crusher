@@ -24,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHitPoints <= 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
