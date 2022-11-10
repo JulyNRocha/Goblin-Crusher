@@ -5,7 +5,9 @@ using UnityEngine;
 public class Waypoint : MonoBehaviour
 {
     [SerializeField] GameObject cannonPrefab;
+    
     [SerializeField] bool isPlacable;
+    public bool IsPlacable { get { return isPlacable; } }
 
     void OnMouseDown()
     {
