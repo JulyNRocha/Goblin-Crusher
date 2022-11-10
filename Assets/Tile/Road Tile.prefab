@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 16006c6880a26214f86ede44e0bbbf31, type: 2}
+    - target: {fileID: 5530897893490505946, guid: 50d9e55711e3c354eb017267cbaa3ce3, type: 3}
+      propertyPath: isPlacable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7332533161716391834, guid: 50d9e55711e3c354eb017267cbaa3ce3, type: 3}
       propertyPath: m_Name
       value: Road Tile
