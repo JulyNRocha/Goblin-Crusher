@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5df635ca7cd3a64f8f089b8e7c7b69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cannonPrefab: {fileID: -4354768359878368733, guid: 9ea88f51fee9ccd4e9cbc87283fb8f2f, type: 3}
+  cannonPrefab: {fileID: 1945821128407660, guid: 9ea88f51fee9ccd4e9cbc87283fb8f2f, type: 3}
   isPlacable: 1
 --- !u!65 &3187170849210127497
 BoxCollider:
