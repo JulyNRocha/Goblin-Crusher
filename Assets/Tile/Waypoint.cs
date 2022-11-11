@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
-    [SerializeField] GameObject cannonPrefab;
+    [SerializeField] Cannon cannonPrefab;
     
     [SerializeField] bool isPlacable;
     public bool IsPlacable { get { return isPlacable; } }
@@ -13,8 +13,8 @@ public class Waypoint : MonoBehaviour
     {
         if (isPlacable)
         {
-            Instantiate(cannonPrefab, transform.position, Quaternion.identity);
-            isPlacable = false;
+            bool isPlaced = cannonPrefab.CreateCannon(cannonPrefab, transform.position);
+            isPlacable = !isPlaced;
         }
     }
     
