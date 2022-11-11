@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goblingPrefab: {fileID: 1258991314359982, guid: ebbe48b5c7c0c7d48a6b1264df1f0814, type: 3}
+  poolSize: 5
   spawnTime: 1
 --- !u!4 &146731864
 Transform:
@@ -1361,6 +1362,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6157826382928766066, guid: 05dabb56afbe32a42bed2f5a0898b6ad, type: 3}
   m_PrefabInstance: {fileID: 1432793910}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1438709827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1438709829}
+  - component: {fileID: 1438709828}
+  m_Layer: 0
+  m_Name: Bank
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1438709828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438709827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40479b281124ff4fb0bc46060f6cd37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startBalance: 150
+  currentBalance: 0
+--- !u!4 &1438709829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438709827}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1447214226
 PrefabInstance:
   m_ObjectHideFlags: 0
