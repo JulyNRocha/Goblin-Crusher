@@ -63,5 +63,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Tile
       objectReference: {fileID: 0}
+    - target: {fileID: 7332533161716391834, guid: 50d9e55711e3c354eb017267cbaa3ce3, type: 3}
+      propertyPath: m_TagString
+      value: Path
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156941178561049893, guid: 50d9e55711e3c354eb017267cbaa3ce3, type: 3}
+      propertyPath: m_text
+      value: 0,1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156941178561049893, guid: 50d9e55711e3c354eb017267cbaa3ce3, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156941178561049893, guid: 50d9e55711e3c354eb017267cbaa3ce3, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156941178561049893, guid: 50d9e55711e3c354eb017267cbaa3ce3, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50d9e55711e3c354eb017267cbaa3ce3, type: 3}
