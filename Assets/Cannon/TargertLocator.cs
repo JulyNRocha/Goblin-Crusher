@@ -6,6 +6,8 @@ using UnityEngine;
 public class TargertLocator : MonoBehaviour
 {
     [SerializeField] Transform cannonHead;
+    [SerializeField] ParticleSystem cannonParticles;
+    [SerializeField] float atackRange;
     Transform target;
 
     void Update()
@@ -36,7 +38,22 @@ public class TargertLocator : MonoBehaviour
 
     void AimWeapon()
     {
+        float targetDistance = Vector3.Distance(transform.position, target.position);
         cannonHead.LookAt(target);
+
+        if(targetDistance < atackRange)
+        {
+            Attack(true);
+        }
+        else
+        {
+            Attack(false);
+        }
     }
 
+    void Attack(bool IsActive)
+    {
+        var emissionModule = cannonParticles.GetComponent<ParticleSystem>().emission;
+        emissionModule.enabled = IsActive;
+    }
 }
