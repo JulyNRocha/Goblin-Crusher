@@ -7,7 +7,7 @@ public class TargertLocator : MonoBehaviour
 {
     [SerializeField] Transform cannonHead;
     [SerializeField] ParticleSystem cannonParticles;
-    [SerializeField] float atackRange;
+    [SerializeField] float range = 15;
     Transform target;
 
     void Update()
@@ -41,7 +41,7 @@ public class TargertLocator : MonoBehaviour
         float targetDistance = Vector3.Distance(transform.position, target.position);
         cannonHead.LookAt(target);
 
-        if(targetDistance < atackRange)
+        if(targetDistance < range)
         {
             Attack(true);
         }
