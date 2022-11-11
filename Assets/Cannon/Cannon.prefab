@@ -298,6 +298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannonHead: {fileID: 4165866241402844}
+  cannonParticles: {fileID: 3856082238729809721}
+  atackRange: 0
 --- !u!1 &3401911984831076123
 GameObject:
   m_ObjectHideFlags: 0
