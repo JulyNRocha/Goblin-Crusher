@@ -45,6 +45,12 @@ public class EnemyMover : MonoBehaviour
         transform.position = path[0].transform.position;
     }
 
+    void FinishPath()
+    {
+        enemy.StealGold();
+        gameObject.SetActive(false);
+    }
+
     IEnumerator FollowPath()
     {
         foreach(Waypoint waypoint in path)
@@ -63,7 +69,6 @@ public class EnemyMover : MonoBehaviour
             }
         }
         
-        enemy.StealGold();
-        gameObject.SetActive(false);
+        FinishPath(); 
     }
 }
