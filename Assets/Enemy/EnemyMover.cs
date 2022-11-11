@@ -27,11 +27,16 @@ public class EnemyMover : MonoBehaviour
     {
         path.Clear();
 
-        GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Path");
+        GameObject[] tiles = GameObject.FindGameObjectsWithTag("Path");
 
-        foreach (GameObject waypoint in waypoints)
+        foreach (GameObject tile in tiles)
         {
-            path.Add(waypoint.GetComponent<Waypoint>());
+            Waypoint waypoint = tile.GetComponent<Waypoint>();
+            if(waypoint != null)
+            {
+                path.Add(waypoint);    
+            }
+            
         }
     }
 
