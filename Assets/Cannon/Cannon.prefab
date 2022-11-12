@@ -300,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannonHead: {fileID: 4165866241402844}
   cannonParticles: {fileID: 3856082238729809721}
-  range: 15
+  range: 20
 --- !u!114 &1945821128407660
 MonoBehaviour:
   m_ObjectHideFlags: 0
