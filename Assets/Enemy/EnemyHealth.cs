@@ -11,12 +11,16 @@ public class EnemyHealth : MonoBehaviour
     [Tooltip("Add amout to maxHitPoint when enemy dies")]
     [SerializeField] int difficultyRamp = 1;
 
+    [SerializeField] GameObject impactVFX;
+
     int currentHitPoints = 0;
+    GameObject parentGameObject;
 
     Enemy enemy;
     
     void OnEnable()
     {
+        parentGameObject = GameObject.FindWithTag("SpawnAtRunTime");
         currentHitPoints = maxHitPoints;
     }
 
@@ -32,6 +36,9 @@ public class EnemyHealth : MonoBehaviour
 
     void ProcessHit()
     {
+        GameObject vfx = Instantiate(impactVFX , transform.position, Quaternion.identity);
+        vfx.transform.parent = parentGameObject.transform; 
+        
         currentHitPoints--;
 
         if (currentHitPoints <= 0)
