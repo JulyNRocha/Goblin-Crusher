@@ -6,43 +6,50 @@ using UnityEngine;
 [RequireComponent(typeof(Enemy))]
 public class EnemyMover : MonoBehaviour
 {
-    [SerializeField] List<Tile> path = new List<Tile>();
     [SerializeField] [Range(0f,5f)] float speed = 1f;
 
+    List<Node> path = new List<Node>();
+    
     Enemy enemy;
+    GridManager gridManager;
+    Pathfinder pathfinder;
 
     void OnEnable()
     {
-        FindPath();
         ReturnToStart();
-        StartCoroutine(FollowPath());
+        RecalculatePath(true);
     }
 
-    void Start()
+    void Awake()
     {
+        gridManager = FindObjectOfType<GridManager>();
+        pathfinder = FindObjectOfType<Pathfinder>();
         enemy = GetComponent<Enemy>();
     }
 
-    void FindPath()
+     void RecalculatePath(bool resetPath)
     {
-        path.Clear();
+        Vector2Int coordinates = new Vector2Int();
 
-        GameObject[] tiles = GameObject.FindGameObjectsWithTag("Path");
-
-        foreach (GameObject tile in tiles)
+        if(resetPath)
         {
-            Tile waypoint = tile.GetComponent<Tile>();
-            if(waypoint != null)
-            {
-                path.Add(waypoint);    
-            }
-            
+            coordinates = pathfinder.StartCoordinates;
         }
+        else
+        {
+            coordinates = gridManager.GetCoordinatesFromPosition(transform.position);
+        }
+
+        StopAllCoroutines();
+        path.Clear();
+        path = pathfinder.GetNewPath(coordinates);
+        StartCoroutine(FollowPath());
     }
+
 
     void ReturnToStart()
     {
-        transform.position = path[0].transform.position;
+        transform.position = gridManager.GetPositionFromCoordinates(pathfinder.StartCoordinates);
     }
 
     void FinishPath()
@@ -51,24 +58,24 @@ public class EnemyMover : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    IEnumerator FollowPath()
+    IEnumerator FollowPath() 
     {
-        foreach(Tile waypoint in path)
+        for(int i = 1; i < path.Count; i++) 
         {
-            Vector3 startPoint = this.transform.position;
-            Vector3 finalPoint = waypoint.transform.position;
+            Vector3 startPosition = transform.position;
+            Vector3 endPosition = gridManager.GetPositionFromCoordinates(path[i].coordinates);
             float travelPercent = 0f;
 
-            transform.LookAt(finalPoint);
+            transform.LookAt(endPosition);
 
-            while(travelPercent < 1f)
-            {
+            while(travelPercent < 1f) {
                 travelPercent += Time.deltaTime * speed;
-                this.transform.position = Vector3.Lerp(startPoint, finalPoint, travelPercent);
+                transform.position = Vector3.Lerp(startPosition, endPosition, travelPercent);
                 yield return new WaitForEndOfFrame();
             }
         }
         
-        FinishPath(); 
+        FinishPath();
     }
+
 }
