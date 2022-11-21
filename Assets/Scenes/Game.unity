@@ -5309,8 +5309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 485a8c50778fc1b46be2d472bcf09329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCoordinates: {x: 3, y: 3}
-  destinationCoordinates: {x: 8, y: 0}
+  startCoordinates: {x: 0, y: 0}
+  destinationCoordinates: {x: 11, y: 5}
 --- !u!1001 &520411749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15602,7 +15602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3129fd497cb3649b845f91a724d4ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: {x: 10, y: 10}
+  gridSize: {x: 13, y: 6}
   unitGridSize: 10
 --- !u!4 &1369999644
 Transform:

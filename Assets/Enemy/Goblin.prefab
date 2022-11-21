@@ -518,7 +518,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d82a94861bc684c9a860dac68401eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: []
   speed: 0.5
 --- !u!114 &3350302065200667492
 MonoBehaviour:
@@ -534,6 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHitPoints: 5
   difficultyRamp: 5
+  impactVFX: {fileID: 1015959161999642, guid: 73c3a222aa8db2b4ca96bb07129367fb, type: 3}
 --- !u!114 &4519587817722854027
 MonoBehaviour:
   m_ObjectHideFlags: 0
